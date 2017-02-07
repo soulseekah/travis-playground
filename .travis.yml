@@ -9,9 +9,9 @@ branches:
 php:
   - 5.3
 
-matrix:
-  include:
-    - env: CAN_YOU_SEE_THIS=1
+env:
+  - CAN_YOU_SEE_THIS=0
+  - CAN_YOU_SEE_THIS=1
 
 install:
   - curl -s https://getcomposer.org/installer | php
