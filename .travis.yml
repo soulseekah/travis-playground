@@ -11,7 +11,6 @@ php:
 
 matrix:
   include:
-    - php: 5.3
     - env: CAN_YOU_SEE_THIS=1
 
 install:
