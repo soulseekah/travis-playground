@@ -19,4 +19,4 @@ install:
   - composer require "phpunit/phpunit=4.8.*"
 
 script:
-  - vendor/bin/phpunit --version
+  - vendor/bin/phpunit test.php
