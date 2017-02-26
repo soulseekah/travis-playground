@@ -10,11 +10,11 @@ php:
   - 5.3
 
 env:
+  global:
+    - [[ if $CAN_YOU_SEE_THIS = 1 ]]; then SHOULD_COVER=1; else SHOULD_COVER=0; fi
   matrix:
     - CAN_YOU_SEE_THIS=0
     - CAN_YOU_SEE_THIS=1
-  global:
-    - SHOULD_COVER=$(( $CAN_YOU_SEE_THIS == 1 ? 1 : 0 ))
 
 install:
   - curl -s https://getcomposer.org/installer | php
