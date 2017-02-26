@@ -10,8 +10,11 @@ php:
   - 5.3
 
 env:
-  - CAN_YOU_SEE_THIS=0
-  - CAN_YOU_SEE_THIS=1
+  matrix:
+    - CAN_YOU_SEE_THIS=0
+    - CAN_YOU_SEE_THIS=1
+  global:
+    - SHOULD_COVER=$(( $CAN_YOU_SEE_THIS == 1 ? 1 : 0 ))
 
 install:
   - curl -s https://getcomposer.org/installer | php
@@ -20,3 +23,4 @@ install:
 
 script:
   - vendor/bin/phpunit test.php
+  - echo $SHOULD_COVER
