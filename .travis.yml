@@ -20,7 +20,7 @@ install:
   - composer require "phpunit/phpunit=4.8.*"
 
 before_script:
-  - before.sh
+  - if [[ $CAN_YOU_SEE_THIS = '0' ]]; then SHOULD_COVER=1; else SHOULD_COVER=0; fi
 
 script:
   - vendor/bin/phpunit test.php
