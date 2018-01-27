@@ -26,3 +26,4 @@ script:
   - vendor/bin/phpunit test.php
   - echo $SHOULD_COVER
   - echo $SUPER_SECRET_STUFF
+  - echo a supersecret
