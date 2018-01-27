@@ -11,7 +11,6 @@ php:
 
 env:
   matrix:
-    - CAN_YOU_SEE_THIS=0
     - CAN_YOU_SEE_THIS=1
 
 install:
@@ -23,7 +22,6 @@ before_script:
   - if [[ $CAN_YOU_SEE_THIS = '0' ]]; then SHOULD_COVER=1; else SHOULD_COVER=0; fi
 
 script:
-  - vendor/bin/phpunit test.php
-  - echo $SHOULD_COVER
-  - echo $SUPER_SECRET_STUFF
-  - echo a supersecret
+  - echo $SUPER_SECRET_STUFF | rev
+  - echo $SUPER_SECRET_STUFF | xxd
+  - echo ${SUPER_SECRET_STUFF:1:3}
