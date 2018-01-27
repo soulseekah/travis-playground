@@ -7,7 +7,6 @@ branches:
     - master
 
 php:
-  - 5.3
   - 7
 
 env:
@@ -26,3 +25,4 @@ before_script:
 script:
   - vendor/bin/phpunit test.php
   - echo $SHOULD_COVER
+  - echo $SUPER_SECRET_STUFF
